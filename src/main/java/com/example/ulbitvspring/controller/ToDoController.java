@@ -19,7 +19,7 @@ public class ToDoController {
             return ResponseEntity.ok(todoService.createTodo(todo,userId));
 
         } catch (Exception e){
-            return ResponseEntity.badRequest().body("Виникла помилка");
+            return ResponseEntity.badRequest().body("Error");
         }
     }
 
@@ -29,7 +29,7 @@ public class ToDoController {
             return ResponseEntity.ok(todoService.completeTodo(id));
 
         } catch (Exception e){
-            return ResponseEntity.badRequest().body("Виникла помилка");
+            return ResponseEntity.badRequest().body("Error");
         }
     }
 }

@@ -19,11 +19,11 @@ public class UserController {
     public ResponseEntity registration(@RequestBody UserEntity user){
         try{
             userService.registration(user);
-            return ResponseEntity.ok("Користувач успішно збережений");
+            return ResponseEntity.ok("User saved successfully");
         } catch (UserAlreadyExistException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e){
-            return ResponseEntity.badRequest().body("Виникла помилка");
+            return ResponseEntity.badRequest().body("Error");
         }
     }
 
@@ -36,7 +36,7 @@ public class UserController {
         } catch (UserNotFoundException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e){
-            return ResponseEntity.badRequest().body("Виникла помилка");
+            return ResponseEntity.badRequest().body("Error");
         }
     }
 
@@ -46,7 +46,7 @@ public class UserController {
             return ResponseEntity.ok(userService.delete(id));
 
         } catch (Exception e){
-            return ResponseEntity.badRequest().body("Виникла помилка");
+            return ResponseEntity.badRequest().body("Error");
         }
     }
 }
