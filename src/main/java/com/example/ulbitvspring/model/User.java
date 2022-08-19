@@ -16,7 +16,6 @@ public class User {
         model.setId(entity.getId());
         model.setUsername(entity.getUsername());
         model.setTodos(entity.getTodos().stream().map(Todo::toModel).collect(Collectors.toList()));
-
         return model;
     }
 
