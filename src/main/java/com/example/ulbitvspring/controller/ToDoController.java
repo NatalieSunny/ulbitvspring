@@ -2,15 +2,20 @@ package com.example.ulbitvspring.controller;
 
 import com.example.ulbitvspring.entity.ToDoEntity;
 import com.example.ulbitvspring.service.TodoService;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/todos")
+@NoArgsConstructor
 public class ToDoController {
-    @Autowired
     private TodoService todoService;
+    @Autowired
+    public ToDoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
 
     @PostMapping
     public ResponseEntity createTodo(@RequestBody ToDoEntity todo,@RequestParam Long userId){

@@ -6,7 +6,7 @@ import com.example.ulbitvspring.exception.UserNotFoundException;
 import com.example.ulbitvspring.model.User;
 import com.example.ulbitvspring.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+//import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
